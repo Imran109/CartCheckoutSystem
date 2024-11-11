@@ -15,7 +15,7 @@ class InitiateCheckout {
     checkout.scan("atv");
     checkout.scan("atv");
     checkout.scan("atv");
-    checkout.scan("vga");
+    // checkout.scan("vga");
 
     //👆🏻need to await for each scan if a network / DB call is required
 

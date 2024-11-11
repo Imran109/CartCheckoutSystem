@@ -5,6 +5,8 @@ export class PricingRuleStrategySelector {
   constructor(private rules: PricingRule[]) {}
 
   public calculateDiscount(items: CartItem[]): number {
+    if (!this.rules.length) return 0;
+
     return this.rules
       .filter((rule) => rule.isApplicable(items))
       .reduce((total, rule) => total + rule.apply(items), 0);

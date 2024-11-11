@@ -1,7 +1,7 @@
 import { CartItem } from "../../../../dto/cart.dto";
 import { PricingRule } from "../../../interface/pricing-rule.interface";
 
-export class BuyNGetMFreeStrategy implements PricingRule {
+export class BuyMGetNFreeStrategy implements PricingRule {
   constructor(
     private readonly sku: string,
     private readonly eligibleBuyQuantity: number,
@@ -22,6 +22,7 @@ export class BuyNGetMFreeStrategy implements PricingRule {
 
     //This line calculates the total discount amount by multiplying the number of full sets that qualify for the discount (fullSets)
     //by the number of items that are eligible to be free (this.eligibleFreeQuantity) and the price of each item (item.product.price).
+
     return fullSets * this.eligibleFreeQuantity * item.product.price;
   }
 }
